@@ -1,7 +1,7 @@
-export CGO_ENABLED = 0
+export CGO_ENABLED=0
 
 build:
-	go build ./cmd/miscutils -ldflags="-w -s"
+	go build -o ./build/ -ldflags="-w -s" ./cmd/miscutils
 
 lint:
 	golangci-lint run -c ./golangci.yml ./...
