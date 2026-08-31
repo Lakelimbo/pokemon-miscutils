@@ -64,6 +64,7 @@ var Effect = map[Type]Effectiveness{
 	Flying: {
 		Weaknesses:  []Type{Electric, Ice, Rock},
 		Resistances: []Type{Bug, Fighting, Grass},
+		Immunities:  []Type{Ground},
 	},
 	Ghost: {
 		Weaknesses:  []Type{Dark, Ghost},

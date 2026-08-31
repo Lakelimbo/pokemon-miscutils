@@ -19,22 +19,23 @@ func CalculateEffectiveness(ability *ability.Abilities, type1 Type, type2 ...Typ
 		res[attacking] = 1
 	}
 
-	defending := make([]Type, 1, len(type2))
-	defending = append(defending, type2...)
+	defending := append([]Type{type1}, type2...)
 
 	for _, def := range defending {
 		e := Effect[def]
-
 		for atk := range res {
 			if slices.Contains(e.Immunities, atk) {
 				res[atk] = 0
-				continue
 			}
+		}
+	}
 
+	for _, def := range defending {
+		e := Effect[def]
+		for atk := range res {
 			if res[atk] == 0 {
 				continue
 			}
-
 			if slices.Contains(e.Weaknesses, atk) {
 				res[atk] *= 2
 			}
