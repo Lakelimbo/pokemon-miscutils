@@ -9,9 +9,9 @@ import (
 	"charm.land/lipgloss/v2"
 	"charm.land/lipgloss/v2/table"
 	"github.com/Lakelimbo/pokemon-miscutils/info/ability"
+	"github.com/Lakelimbo/pokemon-miscutils/info/colors"
 	"github.com/Lakelimbo/pokemon-miscutils/info/types"
-	"github.com/Lakelimbo/pokemon-miscutils/internal/colors"
-	"github.com/Lakelimbo/pokemon-miscutils/internal/utils"
+	"github.com/Lakelimbo/pokemon-miscutils/info/utils"
 	"github.com/urfave/cli/v3"
 )
 

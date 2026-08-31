@@ -20,7 +20,9 @@ miscutils -h
 (You can also place `--help` on each command to show more information)
 
 ## Commands
+
 ### Type effectiveness
+
 - Command: `effectiveness`
 - Aliases: `effect`, `types`
 
@@ -38,6 +40,7 @@ miscutils effectiveness
 ```
 
 Example:
+
 ```sh
 miscutils type Dragon
 miscutils effect Dragon Dark
@@ -52,12 +55,42 @@ miscutils type Bug Dark --ability "Wonder Guard"
 miscutils type Normal Electric -a dryskin
 ```
 
+## Library usage
+
+Besides the CLI, this module can be imported as a library:
+
+```sh
+go get github.com/Lakelimbo/pokemon-miscutils
+```
+
+```go
+import (
+	"github.com/Lakelimbo/pokemon-miscutils/info/ability"
+	"github.com/Lakelimbo/pokemon-miscutils/info/types"
+)
+
+func main() {
+	eff := types.CalculateEffectiveness(&ability.WonderGuard, types.Dragon)
+	// eff[types.Dragon] == 2
+}
+```
+
+Public packages (so far):
+
+- `info/types` — `Type` enum, `Effect` data, `CalculateEffectiveness`
+- `info/ability` — `Abilities` enum and modifiers
+- `info/colors` — terminal color mapping per type
+- `info/utils` — small string helpers
+
 ## Build
+
 Requirements:
+
 - Go v1.26 or higher
 - golangci-lint
 
 To build:
+
 ```sh
 make build
 
@@ -68,6 +101,7 @@ CGO_ENABLED=0 go build -ldflags="-s -w"
 For a smaller binary size, I recommend disabling the `s` and `w` flags, as well as CGO, even though this app is not using it. But there should be no breaking change if those are not set.
 
 Before commiting any changes, run the linter with golangci-lint:
+
 ```sh
 make lint
 ```
