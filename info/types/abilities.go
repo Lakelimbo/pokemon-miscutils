@@ -51,6 +51,11 @@ var AbilityEffects = map[ability.Abilities]AbilityModifier{
 	// Prism Armor reduces any super-effective moves by 25%
 	ability.PrismArmor: filterVariants,
 
+	// Sap Sipper makes it immune to Grass types
+	ability.SapSipper: func(m map[Type]float64) {
+		m[Grass] *= 0
+	},
+
 	// Solid Rock reduces any super-effective moves by 25%
 	ability.SolidRock: filterVariants,
 
