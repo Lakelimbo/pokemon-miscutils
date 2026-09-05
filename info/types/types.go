@@ -97,7 +97,7 @@ var Effect = map[Type]Effectiveness{
 		Resistances: []Type{Fighting, Psychic},
 	},
 	Rock: {
-		Weaknesses:  []Type{Fighting, Grass, Ground, Rock, Steel},
+		Weaknesses:  []Type{Fighting, Grass, Ground, Steel},
 		Resistances: []Type{Fire, Flying, Normal, Poison},
 	},
 	Steel: {
